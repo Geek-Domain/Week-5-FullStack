@@ -15,20 +15,27 @@ function AppContent() {
   };
 
   return (
-    <div className={`App ${theme}`}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1>Uptick Task Manager</h1>
-        <div>
-          <button onClick={toggleTheme} style={{ marginRight: "10px" }}>
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white p-4">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold">Uptick Task Manager</h1>
+        <div className="flex gap-2">
+          <button
+            onClick={toggleTheme}
+            className="px-4 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white rounded"
+          >
             Switch to {theme === "light" ? "Dark" : "Light"} Mode
           </button>
           {auth && (
-            <button onClick={logout}>
+            <button
+              onClick={logout}
+              className="px-4 py-2 bg-red-500 text-white rounded"
+            >
               Logout
             </button>
           )}
         </div>
       </div>
+
       {auth ? (
         <>
           <TaskForm token={auth.token} onTaskCreated={handleTaskCreated} />
