@@ -1,0 +1,16 @@
+# Local secrets and environment settings
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated output
+node_modules/
+**/node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# Local system files
+.DS_Store
+Thumbs.db
